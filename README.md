@@ -16,16 +16,19 @@ Projeto integrador desenvolvido durante a primeira edição do AfroDev proposto 
 ## Telas
 
 ## Splash Screen
-<img alt='Splash Screen' src='.github/Screenshots/Splash.jpg' width="270px" height="585px" /> 
+<img alt='Splash Screen' src='.github/Screenshots/Splash.jpg' width="270px" height="585px" />
+
 ## Welcome Screen
 <img alt='Welcome Screen' src='.github/Screenshots/WelcomeScreen.jpg' width="270px" height="585px" />
+
 ## Loading Screen
 <img alt='Loading App' src='.github/Screenshots/LoadingApp.jpg' width="270px" height="585px" />
+
 ## Loading Pokemon List
 <img alt='Loading Pokemon' src='.github/Screenshots/LoadingList.jpg' width="270px" height="585px" />
-## Loading Pokemon List
-<img alt='Loading Pokemon' src='.github/Screenshots/LoadingList.jpg' width="270px" height="585px" />
+
 ## Pokemon List
 <img alt='Pokemon List' src='.github/Screenshots/PokemonList.jpg' width="270px" height="585px" />
+
 ## Pokemon Details
 <img alt='Pokemon Details' src='.github/Screenshots/Details.jpg' width="270px" height="585px" />
