@@ -16,4 +16,4 @@ Projeto integrador desenvolvido durante a primeira edição do AfroDev proposto 
 ## Telas
 
 ## Splash Screen
-<img alt='Splash Screen' src='.github/Screenshots/Splash.jpg' width="150px" height="250px" />
+<img alt='Splash Screen' src='.github/Screenshots/Splash.jpg' width="270px" height="585px" />
