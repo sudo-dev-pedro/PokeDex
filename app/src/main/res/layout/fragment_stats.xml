@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/layoutFragments">
+
+    <TextView
+        android:id="@+id/txtHP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_hp"
+        android:textSize="@dimen/txt_stats"
+        android:textColor="@color/black"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/txtValueHP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="102dp"
+        android:textColor="@color/black"
+        tools:text="000"
+        app:layout_constraintStart_toEndOf="@+id/txtHP"
+        app:layout_constraintTop_toTopOf="@id/txtHP"
+        app:layout_constraintBottom_toBottomOf="@id/txtHP"/>
+
+    <ProgressBar
+        android:id="@+id/prgValueHP"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_marginStart="@dimen/prgBar_marginStart"
+        android:layout_marginEnd="@dimen/prgBar_marginEnd"
+        android:progressDrawable="@drawable/bkg_custom_progressbar_water"
+        android:max="190"
+        app:layout_constraintStart_toEndOf="@id/txtValueHP"
+        app:layout_constraintTop_toTopOf="@id/txtValueHP"
+        app:layout_constraintBottom_toBottomOf="@id/txtValueHP"/>
+
+    <!-- ATK -->
+    <TextView
+        android:id="@+id/txtATK"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_atk"
+        android:textSize="@dimen/txt_stats"
+        android:textColor="@color/black"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtHP"/>
+
+    <TextView
+        android:id="@+id/txtValueATK"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="102dp"
+        android:textColor="@color/black"
+        tools:text="000"
+        app:layout_constraintStart_toEndOf="@+id/txtATK"
+        app:layout_constraintTop_toTopOf="@id/txtATK"
+        app:layout_constraintBottom_toBottomOf="@id/txtATK"/>
+
+    <ProgressBar
+        android:id="@+id/prgValueATK"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_marginStart="@dimen/prgBar_marginStart"
+        android:layout_marginEnd="@dimen/prgBar_marginEnd"
+        android:progressDrawable="@drawable/bkg_custom_progressbar_water"
+        android:max="190"
+        app:layout_constraintStart_toEndOf="@id/txtValueATK"
+        app:layout_constraintTop_toTopOf="@id/txtValueATK"
+        app:layout_constraintBottom_toBottomOf="@id/txtValueATK"/>
+
+    <!-- DEF -->
+    <TextView
+        android:id="@+id/txtDEF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_def"
+        android:textSize="@dimen/txt_stats"
+        android:textColor="@color/black"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtATK"/>
+
+    <TextView
+        android:id="@+id/txtValueDEF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="102dp"
+        tools:text="000"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@+id/txtDEF"
+        app:layout_constraintTop_toTopOf="@id/txtDEF"
+        app:layout_constraintBottom_toBottomOf="@id/txtDEF"/>
+
+    <ProgressBar
+        android:id="@+id/prgValueDEF"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_marginStart="@dimen/prgBar_marginStart"
+        android:layout_marginEnd="@dimen/prgBar_marginEnd"
+        android:progressDrawable="@drawable/bkg_custom_progressbar_water"
+        android:max="190"
+        app:layout_constraintStart_toEndOf="@id/txtValueDEF"
+        app:layout_constraintTop_toTopOf="@id/txtValueDEF"
+        app:layout_constraintBottom_toBottomOf="@id/txtValueDEF"/>
+
+    <!-- SATK -->
+    <TextView
+        android:id="@+id/txtSATK"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_satk"
+        android:textSize="@dimen/txt_stats"
+        android:textColor="@color/black"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtDEF"/>
+
+    <TextView
+        android:id="@+id/txtValueSATK"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="102dp"
+        tools:text="000"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@+id/txtSATK"
+        app:layout_constraintTop_toTopOf="@id/txtSATK"
+        app:layout_constraintBottom_toBottomOf="@id/txtSATK"/>
+
+    <ProgressBar
+        android:id="@+id/prgValueSATK"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_marginStart="@dimen/prgBar_marginStart"
+        android:layout_marginEnd="@dimen/prgBar_marginEnd"
+        android:progressDrawable="@drawable/bkg_custom_progressbar_water"
+        android:max="190"
+        app:layout_constraintStart_toEndOf="@id/txtValueSATK"
+        app:layout_constraintTop_toTopOf="@id/txtValueSATK"
+        app:layout_constraintBottom_toBottomOf="@id/txtValueSATK"/>
+
+    <!-- SDEF -->
+    <TextView
+        android:id="@+id/txtSDEF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_sdef"
+        android:textSize="@dimen/txt_stats"
+        android:textColor="@color/black"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtSATK"/>
+
+    <TextView
+        android:id="@+id/txtValueSDEF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="102dp"
+        tools:text="000"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@+id/txtSDEF"
+        app:layout_constraintTop_toTopOf="@+id/txtSDEF"
+        app:layout_constraintBottom_toBottomOf="@+id/txtSDEF"/>
+
+    <ProgressBar
+        android:id="@+id/prgValueSDEF"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_marginStart="@dimen/prgBar_marginStart"
+        android:layout_marginEnd="@dimen/prgBar_marginEnd"
+        android:progressDrawable="@drawable/bkg_custom_progressbar_water"
+        android:max="190"
+        app:layout_constraintStart_toEndOf="@id/txtValueSDEF"
+        app:layout_constraintTop_toTopOf="@id/txtValueSDEF"
+        app:layout_constraintBottom_toBottomOf="@id/txtValueSDEF"/>
+
+    <!-- SPD -->
+    <TextView
+        android:id="@+id/txtSPD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_spd"
+        android:textSize="@dimen/txt_stats"
+        android:textColor="@color/black"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtSDEF"/>
+
+    <TextView
+        android:id="@+id/txtValueSPD"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="102dp"
+        tools:text="000"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@+id/txtSPD"
+        app:layout_constraintTop_toTopOf="@+id/txtSPD"
+        app:layout_constraintBottom_toBottomOf="@+id/txtSPD"/>
+
+    <ProgressBar
+        android:id="@+id/prgValueSPD"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_marginStart="@dimen/prgBar_marginStart"
+        android:layout_marginEnd="@dimen/prgBar_marginEnd"
+        android:progressDrawable="@drawable/bkg_custom_progressbar_water"
+        android:max="190"
+        app:layout_constraintStart_toEndOf="@id/txtValueSPD"
+        app:layout_constraintTop_toTopOf="@id/txtValueSPD"
+        app:layout_constraintBottom_toBottomOf="@id/txtValueSPD"/>
+
+    <TextView
+        android:id="@+id/txtViewTitleWeakness"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_weakness"
+        android:layout_marginTop="32dp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/txt_weakness_text_size"
+        app:layout_constraintTop_toBottomOf="@+id/prgValueSPD"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvWeakness"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/wknsRecyclerView_marginStart"
+        android:layout_marginEnd="@dimen/wknsRecyclerView_marginEnd"
+        app:layout_constraintTop_toBottomOf="@id/txtViewTitleWeakness" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

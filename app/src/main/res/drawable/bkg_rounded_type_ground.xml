@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/btn_go_width"
+    android:layout_height="@dimen/btn_go_height"
+    android:shape="rectangle">
+    <solid android:color="@color/ground_color" />
+
+    <corners android:radius="104dp" />
+</shape>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="blue_gradient">#a7eafa</color>
+    <color name="blue_gradient_card">#6E95FD</color>
+    <color name="blue_color">#559EDF</color>
+    <color name="green_gradient_card">#8DE061</color>
+    <color name="gray">#CCD0D0D0</color>
+    <color name="gray_pokemon_id">#A4A4A4</color>
+    <color name="gray_pokemon_name">#4F4F4F</color>
+    <color name="gray_divider">#E3E3E3</color>
+    <color name="black_hint">#272727</color>
+    <color name="green_gradient">#e3f5e3</color>
+    <color name="poke_red">#D62222</color>
+
+    <!-- DEFAULT THEME COLORS -->
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+
+    <!-- POKEMON TYPE COLORS -->
+    <color name="fire_color">#FF9424</color>
+    <color name="dragon_color">#0773C7</color>
+    <color name="flying_color">#569AB4</color>
+    <color name="ghost_color">#6970C5</color>
+    <color name="poison_color">#B563CE</color>
+    <color name="grass_color">#5DBE62</color>
+    <color name="ground_color">#D78555</color>
+    <color name="normal_color">#7E7E7E</color>
+    <color name="psychic_color">#F87C7A</color>
+    <color name="fairy_color">#FF51ED</color>
+    <color name="rock_color">#B98325</color>
+    <color name="steel_color">#338597</color>
+    <color name="water_color">#559EDF</color>
+    <color name="dark_color">#5F606D</color>
+    <color name="bug_color">#9DC130</color>
+    <color name="electric_color">#E6BE1A</color>
+    <color name="fight_color">#D94256</color>
+    <color name="ice_color">#28C5AD</color>
+
+    <color name="fire_color_gradient">#FF9424</color>
+    <color name="dragon_color_gradient">#0180C7</color>
+    <color name="flying_color_gradient">#569AB4</color>
+    <color name="ghost_color_gradient">#7773D4</color>
+    <color name="poison_color_gradient">#C261D4</color>
+    <color name="grass_color_gradient">#5AC178</color>
+    <color name="ground_color_gradient">#D29463</color>
+    <color name="normal_color_gradient">#A3A49E</color>
+    <color name="psychic_color_gradient">#F87C7A</color>
+    <color name="fairy_color_gradient">#F3A7E7</color>
+    <color name="rock_color_gradient">#B98325</color>
+    <color name="steel_color_gradient">#58A6AA</color>
+    <color name="water_color_gradient">#559EDF</color>
+    <color name="dark_color_gradient">#6E7587</color>
+    <color name="bug_color_gradient">#AFC836</color>
+    <color name="electric_color_gradient">#E6BE1A</color>
+    <color name="fight_color_gradient">#E74347</color>
+    <color name="ice_color_gradient">#28C5AD</color>
+</resources>

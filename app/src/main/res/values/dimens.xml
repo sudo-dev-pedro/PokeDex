@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- VIEWS -->
+    <dimen name="btn_padding">16dp</dimen>
+    <dimen name="pdgBottom_textInputLayout">32dp</dimen>
+    <dimen name="imgView_marginTop">168dp</dimen>
+    <dimen name="imgView_marginBottom">16dp</dimen>
+    <dimen name="txtView_paddingBottom">16dp</dimen>
+    <dimen name="txtView_cardViewPadding">60dp</dimen>
+    <dimen name="imgViewPokemon_marginStart">24dp</dimen>
+    <dimen name="imgView_pokemon_marginTop">16dp</dimen>
+
+    <!-- FRAGMENT STATUS -->
+    <dimen name="mrgStart_txt_weakness">16dp</dimen>
+
+    <!-- TEXT -->
+    <dimen name="welcome_text_size">20sp</dimen>
+    <dimen name="header_text_size">20sp</dimen>
+    <dimen name="txt_pokemon_name_size">20sp</dimen>
+    <dimen name="txt_pokemon_id">16sp</dimen>
+    <dimen name="txt_stats">16sp</dimen>
+    <dimen name="txt_weakness_text_size">20sp</dimen>
+    <dimen name="txt_loading_text_size">16sp</dimen>
+
+
+    <!-- ELEMENTS SIZE -->
+        <dimen name="img_pokemon_width">50dp</dimen>
+        <dimen name="img_pokemon_height">50dp</dimen>
+        <dimen name="img_pokemon_item_height">136dp</dimen>
+        <dimen name="img_pokemon_item_width">136dp</dimen>
+
+        <!-- SEARCH VIEW -->
+        <dimen name="srcView_height">40dp</dimen>
+        <dimen name="srcView_marginTop">104dp</dimen>
+        <dimen name="srcView_marginStart">40dp</dimen>
+        <dimen name="srcView_marginEnd">40dp</dimen>
+
+        <!-- BUTTONS -->
+        <dimen name="btn_go_width">108dp</dimen>
+        <dimen name="btn_go_height">40dp</dimen>
+
+        <!-- ICONS -->
+        <dimen name="ic_type_size">32dp</dimen>
+        <dimen name="pdgStart_ic_primary">12dp</dimen>
+
+        <!-- WEAKNESS -->
+        <dimen name="wknsRecyclerView_marginStart">45dp</dimen>
+        <dimen name="wknsRecyclerView_marginEnd">45dp</dimen>
+        <dimen name="wknsImageView_width">56dp</dimen>
+        <dimen name="wknsImageView_height">56dp</dimen>
+        <dimen name="wknsImageView_marginTop">16dp</dimen>
+        <dimen name="wknsImageView_marginEnd">45dp</dimen>
+        <dimen name="wknsTextView_marginStart">16dp</dimen>
+
+        <!-- PROGRESS BAR -->
+        <dimen name="prgBar_marginStart">136dp</dimen>
+        <dimen name="prgBar_marginEnd">40dp</dimen>
+
+        <!-- TAB LAYOUT -->
+        <dimen name="txtTab_text_size">14sp</dimen>
+        <dimen name="pdgTab">0dp</dimen>
+
+</resources>

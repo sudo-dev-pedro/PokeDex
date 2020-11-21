@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imgViewForm1"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/ic_launcher_background"
+        app:layout_constraintEnd_toStartOf="@+id/arrowToRight"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtViewForm1Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="NomePokemon"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@id/imgViewForm1"
+        app:layout_constraintStart_toStartOf="@id/imgViewForm1"
+        app:layout_constraintTop_toBottomOf="@id/imgViewForm1" />
+
+    <ImageView
+        android:id="@+id/arrowToRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_arrow_to_right"
+        app:layout_constraintBottom_toBottomOf="@id/imgViewForm1"
+        app:layout_constraintEnd_toStartOf="@+id/imgViewForm2"
+        app:layout_constraintStart_toEndOf="@+id/imgViewForm1"
+        app:layout_constraintTop_toTopOf="@id/imgViewForm1" />
+
+    <ImageView
+        android:id="@+id/imgViewForm2"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/ic_launcher_background"
+        app:layout_constraintBottom_toBottomOf="@id/imgViewForm1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/arrowToRight"
+        app:layout_constraintTop_toTopOf="@id/imgViewForm1"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/txtViewForm2Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="NomePokemon"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@id/imgViewForm2"
+        app:layout_constraintStart_toStartOf="@id/imgViewForm2"
+        app:layout_constraintTop_toBottomOf="@id/imgViewForm2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

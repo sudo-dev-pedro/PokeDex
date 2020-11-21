@@ -1,0 +1,30 @@
+<resources>
+    <!-- WELCOME ACTIVITY -->
+    <string name="app_name">PokeDex</string>
+    <string name="lbl__name">What is your name?</string>
+    <string name="hint_edtNomeUsuario">My name is…</string>
+    <string name="txt_btn">Go!</string>
+    <string name="txt_welcome">Welcome, %1$s</string>
+
+    <!-- HEADER -->
+    <string name="header_title" >Pokemons</string>
+    <string name="txt_searchHint">Search</string>
+
+    <!-- STATS -->
+    <string name="txt_hp">HP</string>
+    <string name="txt_atk">ATK</string>
+    <string name="txt_def">DEF</string>
+    <string name="txt_satk">SATK</string>
+    <string name="txt_sdef">SDEF</string>
+    <string name="txt_spd">SPD</string>
+
+    <!-- POKEMON LIST -->
+    <string name="txt_loading">Carregando…</string>
+
+    <!-- DETAILS -->
+    <string name="txt_weakness">Weakness</string>
+
+    <!-- DESCRIPTIONS -->
+    <string name="txt_contentImage">Pokemon Image</string>
+
+</resources>

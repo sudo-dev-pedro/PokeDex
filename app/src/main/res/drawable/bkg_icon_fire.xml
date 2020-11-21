@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item>
+        <shape
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="@dimen/btn_go_width"
+            android:layout_height="@dimen/btn_go_height"
+            android:shape="oval"
+            android:padding="10dp">
+            <gradient
+                android:startColor="#FB9B51"
+                android:endColor="@color/fire_color_gradient"
+                android:angle="270" />
+            <size android:height="32dp" android:width="32dp" />
+        </shape>
+    </item>
+    <item android:drawable="@drawable/ic_fire"
+        android:bottom="7dp"
+        android:left="9dp"
+        android:right="9dp"
+        android:top="6dp"/>
+</layer-list>

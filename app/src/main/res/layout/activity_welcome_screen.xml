@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_background"
+    tools:context=".WelcomeActivity">
+
+    <!-- Pokebola GIF -->
+    <ImageView
+        android:id="@+id/gifPokebola"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="@dimen/imgView_marginTop"
+        android:paddingBottom="@dimen/imgView_marginBottom"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Pikachu GIF -->
+    <ImageView
+        android:id="@+id/gifLoading"
+        android:src="@drawable/ic_launcher_background"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="@dimen/imgView_marginTop"
+        android:paddingBottom="@dimen/imgView_marginBottom"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <!-- Label name -->
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/txtView_paddingBottom"
+        android:text="@string/lbl__name"
+        android:textColor="@color/black"
+        android:textSize="@dimen/welcome_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gifPokebola"/>
+
+    <!-- Welcome text -->
+    <TextView
+        android:id="@+id/txtWelcomeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/txtView_paddingBottom"
+        android:textColor="@color/black"
+        android:textSize="@dimen/welcome_text_size"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gifLoading"/>
+
+    <!-- InputLayout -->
+    <EditText
+        android:id="@+id/edtNomeUsuario"
+        android:layout_width="344dp"
+        android:layout_height="48dp"
+        android:hint="@string/hint_edtNomeUsuario"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black_hint"
+        android:paddingLeft="16dp"
+        android:background="@drawable/bkg_search_view"
+        app:layout_constraintTop_toBottomOf="@+id/txtWelcomeText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:inputType="text" />
+
+    <Button
+        android:id="@+id/btnProceed"
+        android:layout_width="@dimen/btn_go_width"
+        android:layout_height="@dimen/btn_go_height"
+        android:text="@string/txt_btn"
+        android:textColor="@color/white"
+        android:background="@drawable/btn_rounded"
+        android:layout_marginTop="@dimen/pdgBottom_textInputLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edtNomeUsuario" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
