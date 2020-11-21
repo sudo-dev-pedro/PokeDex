@@ -1,6 +1,5 @@
 package com.example.pokedex.adapter
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,7 +8,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pokedex.R
 import com.example.pokedex.model.PokemonType
-import com.example.pokedex.utils.PokemonUtils
 
 class WeaknessAdapter (
         private val weaknesses : ArrayList<String>
@@ -32,7 +30,6 @@ class WeaknessAdapter (
     }
 
     override fun onBindViewHolder(holder: WeaknessViewHolder, position: Int) {
-        Log.d("Teste", weaknesses.get(position).toString())
         holder.itemView.apply {
             holder.iconeFraqueza.setBackgroundResource(PokemonType.getPrimaryIconByType(weaknesses.get(position)))
             holder.nomeFraqueza.text = (weaknesses.get(position))

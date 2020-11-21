@@ -23,8 +23,6 @@ class AbilitiesFragment : Fragment() {
     ): View? {
         var view : View = inflater.inflate(R.layout.fragment_abilities, container, false)
         val abilitiesPokemon = arguments?.getStringArrayList("Abilities")
-        //Está vindo vazio
-        Log.d("Teste", abilitiesPokemon.toString())
 
         recyclerView = view.findViewById(R.id.rvAbilities)
 

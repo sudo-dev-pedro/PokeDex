@@ -92,7 +92,6 @@ class StatsFragment : Fragment() {
 
         weaknessesPokemon?.let {
             WeaknessAdapter(it)
-            Log.d("teste", it.toString())
         }
 
         return view
