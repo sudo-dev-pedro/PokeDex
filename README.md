@@ -1,5 +1,5 @@
 # PokeDex
-Projeto integrador desenvolvido durante a primeira edição do AfroDev
+Projeto integrador desenvolvido durante a primeira edição do AfroDev proposto pela [Sandyara Peres](https://github.com/SandyaraPeres)
 
 ## Tecnologias:
 
@@ -12,3 +12,8 @@ Projeto integrador desenvolvido durante a primeira edição do AfroDev
 - [RecyclerView](https://developer.android.com/guide/topics/ui/layout/recyclerview?hl=pt-br)
 - [Fragments](https://developer.android.com/guide/components/fragments?hl=pt-br)
 - [Coroutines](https://developer.android.com/kotlin/coroutines)
+
+## Telas
+
+## Splash Screen
+<img alt='Splash Screen' src='.github/screenshots/Splash.jpg' />
