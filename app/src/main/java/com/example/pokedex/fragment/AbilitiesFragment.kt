@@ -26,10 +26,6 @@ class AbilitiesFragment : Fragment() {
 
         recyclerView = view.findViewById(R.id.rvAbilities)
 
-        //initAdapterAbilities()
-        //createAbilityList()
-        //manageRecyclerViewAbilities()
-
         abilitiesPokemon?.let {
             initAdapterAbilities(it)
             manageRecyclerViewAbilities()
