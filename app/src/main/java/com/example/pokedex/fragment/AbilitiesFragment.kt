@@ -22,28 +22,26 @@ class AbilitiesFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         var view : View = inflater.inflate(R.layout.fragment_abilities, container, false)
-        val abilitiesPokemon = arguments?.getStringArrayList("Abilities")
+        val abilitiesPokemon = arguments?.getParcelableArrayList<PokemonAbilities>("Abilities")
 
         recyclerView = view.findViewById(R.id.rvAbilities)
 
-        initAdapterAbilities()
-        createAbilityList()
-        manageRecyclerViewAbilities()
+        //initAdapterAbilities()
+        //createAbilityList()
+        //manageRecyclerViewAbilities()
+
+        abilitiesPokemon?.let {
+            initAdapterAbilities(it)
+            manageRecyclerViewAbilities()
+        }
 
         return view
     }
 
-    private fun initAdapterAbilities(){
+    private fun initAdapterAbilities(abilities : ArrayList<PokemonAbilities>){
         recyclerView.adapter = AbilityAdapter(
-            createAbilityList()
+            abilities
         )
-    }
-
-    private fun createAbilityList() : MutableList<PokemonAbilities>{
-        var abilities = mutableListOf<PokemonAbilities>()
-        abilities.add(PokemonAbilities("Habilidade X", "Descreve Descreve Descreve Descreve"))
-        abilities.add(PokemonAbilities("Habilidade Y", "Descreve Descreve Descreve Descreve"))
-        return abilities
     }
 
     private fun manageRecyclerViewAbilities(){
@@ -53,5 +51,4 @@ class AbilitiesFragment : Fragment() {
             false
         )
     }
-
 }

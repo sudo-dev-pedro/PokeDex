@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
@@ -9,11 +10,12 @@
         android:id="@+id/txtViewAbilityTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Titulo Habilidade"
         android:textSize="20sp"
         android:layout_marginTop="16dp"
         android:textColor="@color/black"
         android:layout_marginStart="45dp"
+        android:fontFamily="@font/nunito_sans_bold"
+        tools:text="Titulo Habilidade"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -22,11 +24,12 @@
         android:id="@+id/txtViewDesciptionAbility"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Descrição da habilidade Descrição da habilidade"
-        android:textSize="16sp"
+        android:textSize="15sp"
         android:textColor="@color/black"
         android:layout_marginStart="45dp"
         android:layout_marginEnd="45dp"
+        android:fontFamily="@font/nunito_sans_regular"
+        tools:text="Descrição da habilidade Descrição da habilidade"
         app:layout_constraintTop_toBottomOf="@id/txtViewAbilityTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

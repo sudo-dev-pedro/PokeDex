@@ -1,14 +1,11 @@
 package com.example.pokedex.fragment
 
-import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
 import android.widget.TextView
-import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import com.example.pokedex.R
 import com.example.pokedex.adapter.WeaknessAdapter
@@ -29,7 +26,6 @@ class StatsFragment : Fragment() {
     private lateinit var progressBarSDEF : ProgressBar
     private lateinit var progressBarSPD : ProgressBar
 
-    @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -45,7 +41,7 @@ class StatsFragment : Fragment() {
         valueHP.text = PokemonUtils.makeValuesMask(hp)
         if (hp != null) {
             progressBarHP = view.findViewById(R.id.prgValueHP)
-            progressBarHP.setProgress(hp, true)
+            progressBarHP.setProgress(hp)
         }
 
         val atk = statsPokemon?.get(1)
@@ -53,7 +49,7 @@ class StatsFragment : Fragment() {
         valueATK = view.findViewById(R.id.txtValueATK)
         valueATK.text = PokemonUtils.makeValuesMask(atk)
         if (atk != null) {
-            progressBarATK.setProgress(atk, true)
+            progressBarATK.setProgress(atk)
         }
 
         val def = statsPokemon?.get(2)
@@ -61,7 +57,7 @@ class StatsFragment : Fragment() {
         valueDEF = view.findViewById(R.id.txtValueDEF)
         valueDEF.text = PokemonUtils.makeValuesMask(def)
         if (def != null) {
-            progressBarDEF.setProgress(def, true)
+            progressBarDEF.setProgress(def)
         }
 
 
@@ -70,7 +66,7 @@ class StatsFragment : Fragment() {
         valueSATK = view.findViewById(R.id.txtValueSATK)
         valueSATK.text = PokemonUtils.makeValuesMask(satk)
         if (satk != null) {
-            progressBarSATK.setProgress(satk, true)
+            progressBarSATK.setProgress(satk)
         }
 
 
@@ -79,7 +75,7 @@ class StatsFragment : Fragment() {
         valueSDEF = view.findViewById(R.id.txtValueSDEF)
         valueSDEF.text = PokemonUtils.makeValuesMask(sdef)
         if (sdef != null) {
-            progressBarSDEF.setProgress(sdef, true)
+            progressBarSDEF.setProgress(sdef)
         }
 
         val spd = statsPokemon?.get(5)
@@ -87,7 +83,7 @@ class StatsFragment : Fragment() {
         valueSPD = view.findViewById(R.id.txtValueSPD)
         valueSPD.text = PokemonUtils.makeValuesMask(spd)
         if (spd != null) {
-            progressBarSPD.setProgress(spd, true)
+            progressBarSPD.setProgress(spd)
         }
 
         weaknessesPokemon?.let {

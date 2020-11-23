@@ -3,14 +3,14 @@ package com.example.pokedex.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pokedex.R
 import com.example.pokedex.model.PokemonAbilities
+import com.example.pokedex.utils.PokemonUtils
 
 class AbilityAdapter (
-    private val pokemonAbilities : List<PokemonAbilities>
+        private val abilities : ArrayList<PokemonAbilities>
 ) : RecyclerView.Adapter<AbilityAdapter.AbilityViewHolder>() {
 
     class AbilityViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
@@ -31,13 +31,12 @@ class AbilityAdapter (
 
     override fun onBindViewHolder(holder: AbilityAdapter.AbilityViewHolder, position: Int) {
         holder.apply {
-            holder.tituloHabilidade.text = pokemonAbilities[position].tituloHabilidade
-            holder.descricaoHabilidade.text = pokemonAbilities[position].descricaoHabilidade
+            holder.tituloHabilidade.text = PokemonUtils.capitalizeFirstLetterOfPokemon(abilities[position].tituloHabilidade)
+            holder.descricaoHabilidade.text = abilities[position].descricaoHabilidade
         }
     }
 
     override fun getItemCount(): Int {
-        return pokemonAbilities.size
+        return abilities.size
     }
-
 }

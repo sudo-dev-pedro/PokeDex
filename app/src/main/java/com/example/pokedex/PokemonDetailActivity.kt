@@ -12,17 +12,17 @@ import com.example.pokedex.adapter.AbasAdapter
 import com.example.pokedex.fragment.AbilitiesFragment
 import com.example.pokedex.fragment.EvolutionFragment
 import com.example.pokedex.fragment.StatsFragment
+import com.example.pokedex.model.PokemonAbilities
 import com.example.pokedex.model.PokemonType
 import com.google.android.material.tabs.TabLayout
 import com.example.pokedex.utils.PokemonUtils
 import kotlinx.coroutines.*
 import kotlinx.coroutines.Dispatchers.IO
 import me.sargunvohra.lib.pokekotlin.client.PokeApiClient
-import org.jetbrains.anko.find
 
 class PokemonDetailActivity : AppCompatActivity() {
     private lateinit var adapter : AbasAdapter
-    private lateinit var abilitiesPokemon : ArrayList<String>
+    private lateinit var abilitiesPokemon : ArrayList<PokemonAbilities>
     private lateinit var resistencesPokemon : ArrayList<String>
     private lateinit var statsPokemon : ArrayList<Int>
     private lateinit var weaknessesPokemon : ArrayList<String>
@@ -97,15 +97,27 @@ class PokemonDetailActivity : AppCompatActivity() {
         }
 
         pokemonData.abilities.forEach{
-            abilitiesPokemon.add(it.ability.name)
+            val abilityID = pokemonApi.getAbility(it.ability.id)
+            //É preciso pegar também o nome da Habilidade!
+            //val abilityName2 = it.ability.name //Isso é garantido que pega o nome
+            val abilityName = abilityID.name //Isso retorna o nome da abilidade?
+            for(i in 0..1){
+                val lang = abilityID.effectEntries[i].language.name
+                val langBoolean = lang.equals("en")
+
+                if(langBoolean == true){
+                    val ability = abilityID.effectEntries[i].effect
+                    abilitiesPokemon.add(PokemonAbilities(abilityName, ability))
+                }
+            }
         }
 
         bundle = Bundle().apply {
             putIntegerArrayList("Stats", statsPokemon)
             putStringArrayList("Weaknesses", weaknessesPokemon)
             putStringArrayList("Resistences", resistencesPokemon)
-            putStringArrayList("Abilities", abilitiesPokemon)
-            putString("Tipo", tipoPrimarioIntent)
+            putParcelableArrayList("Abilities", abilitiesPokemon)
+            putString("Tipo", tipoPrimarioIntent) //Eu recupero isso em algum local?
         }
 
         return bundle
@@ -179,8 +191,6 @@ class PokemonDetailActivity : AppCompatActivity() {
         adapter.addFragment(StatsFragment(), "Stats", bundle)
         adapter.addFragment(EvolutionFragment(), "Evolutions", bundle)
         adapter.addFragment(AbilitiesFragment(), "Abilities", bundle)
-
-        //this.statsFragment.arguments(bundle)
     }
 
     private fun startTabLayout() {

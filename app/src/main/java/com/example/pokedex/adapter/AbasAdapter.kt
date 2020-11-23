@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
+import com.example.pokedex.fragment.AbilitiesFragment
 import com.example.pokedex.fragment.StatsFragment
 import com.example.pokedex.model.Pokemon
 
@@ -36,10 +37,16 @@ class AbasAdapter(
                 fragmentStats.arguments = data[0]
                 return fragmentStats
             }
+
+            2 -> {
+                val fragmentAbilities = AbilitiesFragment()
+                fragmentAbilities.arguments = data[2]
+                return fragmentAbilities
+            }
+
             else -> fragments[position]
         }
 
-        //return fragments[position]
     }
 
     override fun getPageTitle(position: Int): CharSequence? {

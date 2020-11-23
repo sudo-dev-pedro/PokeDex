@@ -1,8 +1,6 @@
 package com.example.pokedex.adapter
 
 import android.content.Context
-import android.media.Image
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -50,7 +48,7 @@ class PokemonAdapter(
             )
             holder.iconeTipoPrimario.setBackgroundResource(
                     PokemonType.getPrimaryIconByType(
-                            pokemons[position].tipoPrimario
+                            pokemons[position].tipos.get(0).type.name
                     )
             )
 
