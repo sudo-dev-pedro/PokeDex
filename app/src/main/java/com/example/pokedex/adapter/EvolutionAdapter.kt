@@ -33,9 +33,9 @@ class EvolutionAdapter (
 
     override fun onBindViewHolder(holder: EvolutionAdapter.EvolutionViewHolder, position: Int) {
         holder.apply {
-            holder.nomePrimeiraEvolucao.text = pokemonEvolutions[position].nomePrimeiraEvolucao
+            holder.nomePrimeiraEvolucao.text = pokemonEvolutions[position].nomeEvolucoes
             //holder.imagemPrimeiraEvolucao.setImageResource(pokemonEvolutions[position].imagemPrimeiraEvolucao)
-            holder.nomeSegundaEvolucao.text = pokemonEvolutions[position].nomeSegundaEvolucao
+            holder.nomeSegundaEvolucao.text = pokemonEvolutions[position].segundaEvolucao
             //holder.imagemSegundaEvolucao.setImageResource(pokemonEvolutions[position].imagemSegundaEvolucao)
         }
     }

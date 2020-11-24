@@ -73,7 +73,7 @@ class PokemonListActivity : AppCompatActivity(), CellPokemonClickListener{
         */
 
         //Limitado para testes
-        for (i in 150..200) {
+        for (i in 1..10) {
             var pokemonData = pokemonApi.getPokemon(i)
             val pokemonID = pokemonData.id
             val pokemonName = pokemonData.name
