@@ -4,11 +4,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="wrap_content" >
 
     <TextView
         android:id="@+id/txtViewAbilityTitle"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20sp"
         android:layout_marginTop="16dp"
@@ -17,8 +17,7 @@
         android:fontFamily="@font/nunito_sans_bold"
         tools:text="Titulo Habilidade"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/txtViewDesciptionAbility"
@@ -33,5 +32,16 @@
         app:layout_constraintTop_toBottomOf="@id/txtViewAbilityTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="8dp"
+        android:background="#44000000"
+        android:id="@+id/charactersTitleSeparator"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@id/txtViewDesciptionAbility"
+        app:layout_constraintStart_toStartOf="@id/txtViewAbilityTitle"
+        app:layout_constraintEnd_toEndOf="@id/txtViewDesciptionAbility"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,125 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nstScrollView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="fill_vertical"
     android:fillViewport="true"
-    android:background="@color/white"
     tools:background="@color/black">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical" >
+        android:layout_marginTop="92dp"
+        android:background="@drawable/bkg_view_rounded"
+        tools:context=".PokemonDetailActivity">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <ImageView
+            android:id="@+id/imgViewPokemon"
+            android:layout_width="@dimen/img_pokemon_item_height"
+            android:layout_height="@dimen/img_pokemon_item_width"
+            android:contentDescription="@string/txt_contentImage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:background="@drawable/ic_launcher_background" />
+
+        <ImageView
+            android:id="@+id/gifLoadingDetails"
+            android:layout_width="@dimen/img_pokemon_item_height"
+            android:layout_height="@dimen/img_pokemon_item_width"
+            android:contentDescription="@string/txt_contentImage"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:background="@drawable/ic_launcher_background" />
+
+        <TextView
+            android:id="@+id/txtNomePokemon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunito_sans_regular"
+            android:padding="4dp"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgViewPokemon"
+            tools:text="Teste" />
+
+        <TextView
+            android:id="@+id/txtIdPokemon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunito_sans_light"
+            android:textColor="@color/gray_pokemon_id"
+            android:textSize="@dimen/txt_pokemon_id"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtNomePokemon"
+            tools:text="#001" />
+
+        <!-- GAMBIARRA? -->
+        <TextView
+            android:id="@+id/txtViewPrimaryIconStyle"
+            android:layout_width="104dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/nunito_sans_regular"
+            android:gravity="center"
+            android:paddingStart="@dimen/pdgStart_ic_primary"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:drawableStartCompat="@drawable/ic_grass"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtIdPokemon"
+            tools:background="@color/black"
+            tools:ignore="RtlSymmetry"
+            tools:text="Tipo" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tbLayoutAbas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="176dp"
-            android:background="@drawable/bkg_view_rounded">
+            android:layout_gravity="center"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="32dp"
+            android:background="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtViewPrimaryIconStyle"
+            app:tabBackground="@drawable/bkg_tab_selector"
+            app:tabIndicatorColor="@color/white"
+            app:tabIndicatorHeight="0dp"
+            app:tabSelectedTextColor="@color/white"
+            app:tabTextAppearance="@style/customTabStyle"
+            app:tabTextColor="@color/blue_color" />
 
-            <ImageView
-                android:id="@+id/imgViewPokemon"
-                android:layout_width="@dimen/img_pokemon_item_height"
-                android:layout_height="@dimen/img_pokemon_item_width"
-                android:layout_gravity="center"
-                android:contentDescription="@string/txt_contentImage"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:background="@drawable/ic_launcher_background"/>
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:isScrollContainer="true"
+            android:nestedScrollingEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tbLayoutAbas" />
 
-            <ImageView
-                android:id="@+id/gifLoadingDetails"
-                android:layout_width="@dimen/img_pokemon_item_height"
-                android:layout_height="@dimen/img_pokemon_item_width"
-                android:layout_gravity="center"
-                android:contentDescription="@string/txt_contentImage"
-                android:visibility="gone"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:background="@drawable/ic_launcher_background"/>
-
-            <TextView
-                android:id="@+id/txtNomePokemon"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:padding="4dp"
-                android:textSize="24sp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/nunito_sans_regular"
-                tools:text="Teste"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imgViewPokemon" />
-
-            <TextView
-                android:id="@+id/txtIdPokemon"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textSize="@dimen/txt_pokemon_id"
-                android:textColor="@color/gray_pokemon_id"
-                android:fontFamily="@font/nunito_sans_light"
-                tools:text="#001"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtNomePokemon" />
-
-            <!-- GAMBIARRA? -->
-            <TextView
-                android:id="@+id/txtViewPrimaryIconStyle"
-                android:layout_width="104dp"
-                android:layout_height="32dp"
-                android:layout_marginTop="16dp"
-                android:paddingStart="@dimen/pdgStart_ic_primary"
-                android:textSize="16sp"
-                android:textColor="@color/white"
-                android:fontFamily="@font/nunito_sans_regular"
-                android:layout_gravity="center"
-                android:gravity="center"
-                tools:text="Tipo"
-                tools:background="@color/black"
-                app:drawableStartCompat="@drawable/ic_grass"
-                app:layout_constraintTop_toBottomOf="@+id/txtIdPokemon"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                tools:ignore="RtlSymmetry" />
-
-            <com.google.android.material.tabs.TabLayout
-                android:id="@+id/tbLayoutAbas"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:layout_marginStart="32dp"
-                android:layout_marginEnd="32dp"
-                android:layout_marginTop="24dp"
-                android:layout_gravity="center"
-                app:tabTextAppearance="@style/customTabStyle"
-                app:tabTextColor="@color/blue_color"
-                app:tabSelectedTextColor="@color/white"
-                app:tabIndicatorColor="@color/white"
-                app:tabIndicatorHeight="0dp"
-                app:tabBackground="@drawable/bkg_tab_selector"
-                app:layout_constraintTop_toBottomOf="@+id/txtViewPrimaryIconStyle" />
-
-            <androidx.viewpager.widget.ViewPager
-                android:id="@+id/viewPager"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:nestedScrollingEnabled="true"
-                android:isScrollContainer="true"
-                app:layout_constraintTop_toBottomOf="@id/tbLayoutAbas" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.core.widget.NestedScrollView>

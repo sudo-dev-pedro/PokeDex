@@ -23,22 +23,22 @@ import kotlinx.coroutines.Dispatchers.IO
 import me.sargunvohra.lib.pokekotlin.client.PokeApiClient
 
 class PokemonDetailActivity : AppCompatActivity() {
-    private lateinit var adapter : AbasAdapter
-    private lateinit var abilitiesPokemon : ArrayList<PokemonAbilities>
-    private lateinit var evolutionsPokemon : ArrayList<PokemonEvolutions>
-    private lateinit var resistencesPokemon : ArrayList<String>
-    private lateinit var statsPokemon : ArrayList<Int>
-    private lateinit var weaknessesPokemon : ArrayList<String>
+    private lateinit var adapter: AbasAdapter
+    private lateinit var abilitiesPokemon: ArrayList<PokemonAbilities>
+    private lateinit var evolutionsPokemon: ArrayList<PokemonEvolutions>
+    private lateinit var resistencesPokemon: ArrayList<String>
+    private lateinit var statsPokemon: ArrayList<Int>
+    private lateinit var weaknessesPokemon: ArrayList<String>
     private lateinit var bundle: Bundle
-    private lateinit var imagemPokemon : ImageView
-    private lateinit var loadingGifDetails : ImageView
+    private lateinit var imagemPokemon: ImageView
+    private lateinit var loadingGifDetails: ImageView
     private lateinit var nestedScrollView: NestedScrollView
     private lateinit var pokemonApi: PokeApiClient
-    private lateinit var tabLayout : TabLayout
-    private lateinit var nomePokemon : TextView
-    private lateinit var idPokemon : TextView
-    private lateinit var tipoPrimario : TextView
-    private lateinit var viewPager : ViewPager
+    private lateinit var tabLayout: TabLayout
+    private lateinit var nomePokemon: TextView
+    private lateinit var idPokemon: TextView
+    private lateinit var tipoPrimario: TextView
+    private lateinit var viewPager: ViewPager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,7 +52,7 @@ class PokemonDetailActivity : AppCompatActivity() {
         }
     }
 
-    private suspend fun passDataToUI(dataPokemon: Bundle){
+    private suspend fun passDataToUI(dataPokemon: Bundle) {
         withContext(Dispatchers.Main) {
             delay(2500)
             setTextViews()
@@ -64,12 +64,12 @@ class PokemonDetailActivity : AppCompatActivity() {
         }
     }
 
-    private suspend fun requestPokemonApi(){
+    private suspend fun requestPokemonApi() {
         val result = getPokemonData()
         passDataToUI(result)
     }
 
-    private suspend fun getPokemonData() : Bundle {
+    private suspend fun getPokemonData(): Bundle {
         delay(2000)
 
         pokemonApi = PokeApiClient()
@@ -79,10 +79,11 @@ class PokemonDetailActivity : AppCompatActivity() {
         abilitiesPokemon = arrayListOf()
         evolutionsPokemon = arrayListOf()
 
-        val idPokemonIntent : String? = intent.getStringExtra("id")
+        val idPokemonIntent: String? = intent.getStringExtra("id")
         val tipoPrimarioIntent: String? = intent.getStringExtra("tipoPrimario")
 
-        val pokemonData = pokemonApi.getPokemon(idPokemonIntent?.toInt()!!) //Isso não é boa prática!
+        val pokemonData =
+            pokemonApi.getPokemon(idPokemonIntent?.toInt()!!) //Isso não é boa prática!
 
         statsPokemon.add(pokemonData.stats[0].baseStat)
         statsPokemon.add(pokemonData.stats[1].baseStat)
@@ -100,14 +101,14 @@ class PokemonDetailActivity : AppCompatActivity() {
             resistencesPokemon.add(it.name)
         }
 
-        pokemonData.abilities.forEach{
+        pokemonData.abilities.forEach {
             val abilityID = pokemonApi.getAbility(it.ability.id)
             val abilityName = abilityID.name
-            for(i in 0..1){
+            for (i in 0..1) {
                 val lang = abilityID.effectEntries[i].language.name
                 val langBoolean = lang.equals("en")
 
-                if(langBoolean == true){
+                if (langBoolean == true) {
                     val ability = abilityID.effectEntries[i].effect
                     abilitiesPokemon.add(PokemonAbilities(abilityName, ability))
                 }
@@ -117,7 +118,7 @@ class PokemonDetailActivity : AppCompatActivity() {
         val chain = pokemonApi.getEvolutionChain(pokemonData.id)
         //Nome da Espécie
         //val subChainEvolutionName = chain.chain.species.name
-        val evolution = chain.chain.evolvesTo.forEach{
+        val evolution = chain.chain.evolvesTo.forEach {
             val firstEvolutionName = it.species.name
             val secondEvolution = it.evolvesTo[0].species.name
             evolutionsPokemon.add(PokemonEvolutions(firstEvolutionName, secondEvolution))
@@ -135,7 +136,7 @@ class PokemonDetailActivity : AppCompatActivity() {
         return bundle
     }
 
-    private fun initViews(){
+    private fun initViews() {
         this.tabLayout = findViewById(R.id.tbLayoutAbas)
         this.viewPager = findViewById(R.id.viewPager)
         this.nomePokemon = findViewById(R.id.txtNomePokemon)
@@ -146,7 +147,7 @@ class PokemonDetailActivity : AppCompatActivity() {
         this.loadingGifDetails = findViewById(R.id.gifLoadingDetails)
     }
 
-    private fun callLoading(){
+    private fun callLoading() {
         this.loadingGifDetails.visibility = View.VISIBLE
         Glide
             .with(this)
@@ -155,34 +156,38 @@ class PokemonDetailActivity : AppCompatActivity() {
             .into(loadingGifDetails)
     }
 
-    private fun setViewsVisibility(){
+    private fun setViewsVisibility() {
         this.loadingGifDetails.visibility = View.GONE
     }
 
-    private fun setTextViews(){
-        val idPokemonIntent : String? = intent.getStringExtra("id")
-        val nomePokemonIntent : String? = intent.getStringExtra("nome")
+    private fun setTextViews() {
+        val idPokemonIntent: String? = intent.getStringExtra("id")
+        val nomePokemonIntent: String? = intent.getStringExtra("nome")
         val tipoPrimarioIntent: String? = intent.getStringExtra("tipoPrimario")
 
-        idPokemonIntent?.let{
+        idPokemonIntent?.let {
             idPokemon.text = PokemonUtils.makeIDMask(idPokemonIntent.toInt())
         }
 
-        nomePokemonIntent?.let{
+        nomePokemonIntent?.let {
             nomePokemon.text = PokemonUtils.capitalizeFirstLetterOfPokemon(nomePokemonIntent)
         }
 
         tipoPrimarioIntent?.let {
             tipoPrimario.text = PokemonUtils.capitalizeFirstLetterOfPokemon(tipoPrimarioIntent)
             tipoPrimario.setBackgroundResource(PokemonType.getDrawableTypeColor(tipoPrimarioIntent))
-            tipoPrimario.setCompoundDrawablesWithIntrinsicBounds(PokemonType.getIconByType(tipoPrimarioIntent) , 0, 0, 0)
+            tipoPrimario.setCompoundDrawablesWithIntrinsicBounds(
+                PokemonType.getIconByType(
+                    tipoPrimarioIntent
+                ), 0, 0, 0
+            )
         }
     }
 
-    private fun setPokemonImage(){
-        val id : String? = intent.getStringExtra("id")
+    private fun setPokemonImage() {
+        val id: String? = intent.getStringExtra("id")
 
-        id?.let{
+        id?.let {
             Glide
                 .with(this)
                 .load(PokemonUtils.prepareImages(id.toInt()))
@@ -190,7 +195,7 @@ class PokemonDetailActivity : AppCompatActivity() {
         }
     }
 
-    private fun setNestedBackground(){
+    private fun setNestedBackground() {
         val tipoPrimarioIntent: String? = intent.getStringExtra("tipoPrimario")
 
         tipoPrimarioIntent?.let {
@@ -210,12 +215,16 @@ class PokemonDetailActivity : AppCompatActivity() {
         this.viewPager.adapter = adapter
         this.viewPager.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tabLayout))
 
-        this.tabLayout.addOnTabSelectedListener(object: TabLayout.OnTabSelectedListener {
+        this.tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab?) {
                 tab?.let {
                     //viewPager.currentItem = tab.position
                     val tipoPrimarioIntent: String? = intent.getStringExtra("tipoPrimario")
-                    tabLayout.setSelectedTabIndicatorColor(PokemonType.getThemeByType(tipoPrimarioIntent))
+                    tabLayout.setSelectedTabIndicatorColor(
+                        PokemonType.getThemeByType(
+                            tipoPrimarioIntent
+                        )
+                    )
                 }
             }
 

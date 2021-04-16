@@ -18,13 +18,13 @@ import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.Dispatchers.Main
 import me.sargunvohra.lib.pokekotlin.client.PokeApiClient
 
-class PokemonListActivity : AppCompatActivity(), CellPokemonClickListener{
-    private lateinit var loadingGif : ImageView
-    private lateinit var intentItem : Intent
-    private lateinit var pokemons : MutableList<Pokemon>
+class PokemonListActivity : AppCompatActivity(), CellPokemonClickListener {
+    private lateinit var loadingGif: ImageView
+    private lateinit var intentItem: Intent
+    private lateinit var pokemons: MutableList<Pokemon>
     private lateinit var pokemonApi: PokeApiClient
-    private lateinit var recyclerViewPokemons : RecyclerView
-    private lateinit var loadingText : TextView
+    private lateinit var recyclerViewPokemons: RecyclerView
+    private lateinit var loadingText: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,21 +38,20 @@ class PokemonListActivity : AppCompatActivity(), CellPokemonClickListener{
         }
     }
 
-    private suspend fun passDataToUI(pokemonList: MutableList<Pokemon>){
+    private suspend fun passDataToUI(pokemonList: MutableList<Pokemon>) {
         withContext(Main) {
-            delay(5000)
             initAdapter(pokemonList)
             manageRecyclerView()
             setViewsVisibility()
         }
     }
 
-    private suspend fun requestPokemonApi(){
+    private suspend fun requestPokemonApi() {
         val result = getPokemonList()
         passDataToUI(result)
     }
 
-    private suspend fun getPokemonList() : MutableList<Pokemon> {
+    private suspend fun getPokemonList(): MutableList<Pokemon> {
         delay(1000)
 
         pokemons = mutableListOf()
@@ -85,13 +84,13 @@ class PokemonListActivity : AppCompatActivity(), CellPokemonClickListener{
         return pokemons
     }
 
-    private fun initViews(){
+    private fun initViews() {
         this.recyclerViewPokemons = findViewById(R.id.rvPokemonList)
         this.loadingGif = findViewById(R.id.gifLoadingList)
         this.loadingText = findViewById(R.id.txtLoading)
     }
 
-    private fun callLoading(){
+    private fun callLoading() {
         this.loadingGif.visibility = View.VISIBLE
         this.loadingText.visibility = View.VISIBLE
         Glide
@@ -101,22 +100,24 @@ class PokemonListActivity : AppCompatActivity(), CellPokemonClickListener{
             .into(loadingGif)
     }
 
-    private fun initAdapter(pokemonList : MutableList<Pokemon>){
+    private fun initAdapter(pokemonList: MutableList<Pokemon>) {
         this.recyclerViewPokemons.adapter = PokemonAdapter(
-                pokemonList,
-                this,
-                this)
+            pokemonList,
+            this,
+            this
+        )
     }
 
-    private fun manageRecyclerView(){
+    private fun manageRecyclerView() {
         this.recyclerViewPokemons.layoutManager = LinearLayoutManager(
-                this,
-                LinearLayoutManager.VERTICAL,
-                false)
+            this,
+            LinearLayoutManager.VERTICAL,
+            false
+        )
         this.recyclerViewPokemons.setHasFixedSize(true)
     }
 
-    private fun setViewsVisibility(){
+    private fun setViewsVisibility() {
         this.loadingGif.visibility = View.GONE
         this.loadingText.visibility = View.GONE
     }
@@ -124,12 +125,13 @@ class PokemonListActivity : AppCompatActivity(), CellPokemonClickListener{
     override fun onPokemonCellClickListener(data: Pokemon) {
 
         this.intentItem = Intent(
-                this,
-                PokemonDetailActivity::class.java).apply {
-                    putExtra("id", data.id.toString())
-                    putExtra("nome", data.nome)
-                    putExtra("tipoPrimario", data.tipoPrimario)
-                }
+            this,
+            PokemonDetailActivity::class.java
+        ).apply {
+            putExtra("id", data.id.toString())
+            putExtra("nome", data.nome)
+            putExtra("tipoPrimario", data.tipoPrimario)
+        }
 
         startActivity(intentItem)
     }

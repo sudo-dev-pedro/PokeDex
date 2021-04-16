@@ -10,17 +10,15 @@ import com.example.pokedex.fragment.StatsFragment
 import com.example.pokedex.model.Pokemon
 
 class AbasAdapter(
-        fragmentManager: FragmentManager,
-        var bundle: Bundle
-)
-    : FragmentPagerAdapter(fragmentManager)
-{
+    fragmentManager: FragmentManager,
+    var bundle: Bundle
+) : FragmentPagerAdapter(fragmentManager) {
 
     private var fragments = mutableListOf<Fragment>()
     private var tituloAbas = mutableListOf<String>()
     private var data = mutableListOf<Bundle>()
 
-    fun addFragment (fragment: Fragment, titulo: String, bundle: Bundle){
+    fun addFragment(fragment: Fragment, titulo: String, bundle: Bundle) {
         fragments.add(fragment)
         tituloAbas.add(titulo)
         data.add(bundle)
@@ -32,7 +30,7 @@ class AbasAdapter(
 
     override fun getItem(position: Int): Fragment {
 
-        return when(position){
+        return when (position) {
             0 -> {
                 val fragmentStats = StatsFragment()
                 fragmentStats.arguments = data[0]
