@@ -9,13 +9,13 @@ import com.example.pokedex.R
 import com.example.pokedex.model.PokemonAbilities
 import com.example.pokedex.utils.PokemonUtils
 
-class AbilityAdapter (
-        private val abilities : ArrayList<PokemonAbilities>
+class AbilityAdapter(
+    private val abilities: ArrayList<PokemonAbilities>
 ) : RecyclerView.Adapter<AbilityAdapter.AbilityViewHolder>() {
 
-    class AbilityViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
-        val tituloHabilidade : TextView = itemView.findViewById(R.id.txtViewAbilityTitle)
-        val descricaoHabilidade : TextView = itemView.findViewById(R.id.txtViewDesciptionAbility)
+    class AbilityViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val abilityTitle: TextView = itemView.findViewById(R.id.txtViewAbilityTitle)
+        val abilityDescription: TextView = itemView.findViewById(R.id.txtViewDesciptionAbility)
     }
 
     override fun onCreateViewHolder(
@@ -29,10 +29,11 @@ class AbilityAdapter (
         return AbilityViewHolder(item)
     }
 
-    override fun onBindViewHolder(holder: AbilityAdapter.AbilityViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: AbilityViewHolder, position: Int) {
         holder.apply {
-            holder.tituloHabilidade.text = PokemonUtils.capitalizeFirstLetterOfPokemon(abilities[position].tituloHabilidade)
-            holder.descricaoHabilidade.text = abilities[position].descricaoHabilidade
+            holder.abilityTitle.text =
+                PokemonUtils.capitalizeFirstLetterOfPokemon(abilities[position].abilityTitle)
+            holder.abilityDescription.text = abilities[position].abilityDescription
         }
     }
 
