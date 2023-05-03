@@ -4,18 +4,18 @@ import android.os.Parcel
 import android.os.Parcelable
 
 class PokemonAbilities(
-        val tituloHabilidade: String?,
-        val descricaoHabilidade: String?
+    val abilityTitle: String?,
+    val abilityDescription: String?
 ) : Parcelable {
 
     constructor(parcel: Parcel) : this(
-            parcel.readString(),
-            parcel.readString()) {
-    }
+        parcel.readString(),
+        parcel.readString()
+    )
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeString(tituloHabilidade)
-        parcel.writeString(descricaoHabilidade)
+        parcel.writeString(abilityTitle)
+        parcel.writeString(abilityDescription)
     }
 
     override fun describeContents(): Int {
