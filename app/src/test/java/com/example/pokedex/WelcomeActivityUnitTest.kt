@@ -1,5 +1,6 @@
 package com.example.pokedex
 
+import com.example.pokedex.ui.WelcomeActivity
 import junit.framework.TestCase.assertEquals
 import org.junit.Before
 import org.junit.Test

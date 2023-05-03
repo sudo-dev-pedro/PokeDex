@@ -1,8 +1,10 @@
-package com.example.pokedex
+package com.example.pokedex.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.pokedex.R
+import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -16,6 +18,7 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
     }
 
+    @OptIn(DelicateCoroutinesApi::class)
     override fun onResume() {
         super.onResume()
 
