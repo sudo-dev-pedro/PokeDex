@@ -7,19 +7,22 @@ import org.junit.Test
 class PokemonUtilsUnitTest {
 
     @Test
-    fun shouldReturnTheImageURL(){
+    fun shouldReturnTheImageURL() {
         val result = PokemonUtils.prepareImages(1)
-        assertEquals("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png", result)
+        assertEquals(
+            "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
+            result
+        )
     }
 
     @Test
-    fun shouldReturnValueMasked(){
+    fun shouldReturnValueMasked() {
         val result = PokemonUtils.makeValuesMask(45)
         assertEquals("045", result)
     }
 
     @Test
-    fun shouldReturnIDMasked(){
+    fun shouldReturnIDMasked() {
         val result = PokemonUtils.makeIDMask(100)
         assertEquals("#100", result)
     }

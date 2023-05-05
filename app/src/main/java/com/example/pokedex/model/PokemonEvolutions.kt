@@ -3,20 +3,20 @@ package com.example.pokedex.model
 import android.os.Parcel
 import android.os.Parcelable
 
-class PokemonEvolutions (
-    val nomeEvolucoes : String?,
-    val segundaEvolucao : String?
+class PokemonEvolutions(
+    val evolutions: String?,
+    val secondEvolution: String?
     //val imagemEvolucoes : String
 ) : Parcelable {
 
     constructor(parcel: Parcel) : this(
-            parcel.readString(),
-            parcel.readString()) {
-    }
+        parcel.readString(),
+        parcel.readString()
+    )
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeString(nomeEvolucoes)
-        parcel.writeString(segundaEvolucao)
+        parcel.writeString(evolutions)
+        parcel.writeString(secondEvolution)
     }
 
     override fun describeContents(): Int {
