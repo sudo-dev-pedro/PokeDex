@@ -62,7 +62,7 @@ class PokemonAdapter(
 //            }
 
             holder.itemView.setOnClickListener {
-                onCellClickListener.onPokemonCellClickListener(pokemonList[position])
+                onCellClickListener.onPokemonCellClickListener(pokemonList[position].name)
             }
         }
     }
