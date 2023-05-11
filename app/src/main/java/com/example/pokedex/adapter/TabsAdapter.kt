@@ -7,9 +7,8 @@ import androidx.fragment.app.FragmentPagerAdapter
 import com.example.pokedex.fragment.AbilitiesFragment
 import com.example.pokedex.fragment.EvolutionFragment
 import com.example.pokedex.fragment.StatsFragment
-import com.example.pokedex.model.Pokemon
 
-class AbasAdapter(
+class TabsAdapter(
     fragmentManager: FragmentManager,
     var bundle: Bundle
 ) : FragmentPagerAdapter(fragmentManager) {
