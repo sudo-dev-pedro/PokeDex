@@ -13,9 +13,8 @@ import com.example.pokedex.R
 import com.example.pokedex.adapter.PokemonAdapter
 import com.example.pokedex.`interface`.CellPokemonClickListener
 import com.example.pokedex.model.Pokemon
+import com.example.pokedex.ui.pokemondetail.view.PokemonDetailActivity
 import com.example.pokedex.ui.pokemonlist.viewmodel.PokemonListViewModel
-import kotlinx.coroutines.*
-import kotlinx.coroutines.Dispatchers.Main
 import org.koin.android.ext.android.inject
 
 class PokemonListActivity : AppCompatActivity(), CellPokemonClickListener {
@@ -79,17 +78,15 @@ class PokemonListActivity : AppCompatActivity(), CellPokemonClickListener {
         this.loadingText.visibility = View.GONE
     }
 
-//    override fun onPokemonCellClickListener(data: Pokemon) {
-//
-//        this.intentItem = Intent(
-//            this,
-//            PokemonDetailActivity::class.java
-//        ).apply {
-//            putExtra("id", data.id.toString())
-//            putExtra("nome", data.nome)
-//            putExtra("tipoPrimario", data.tipoPrimario)
-//        }
-//
-//        startActivity(intentItem)
-//    }
+    override fun onPokemonCellClickListener(name: String) {
+
+        this.intentItem = Intent(
+            this,
+            PokemonDetailActivity::class.java
+        ).apply {
+            putExtra("id", name)
+        }
+
+        startActivity(intentItem)
+    }
 }
